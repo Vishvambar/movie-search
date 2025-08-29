@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 const OMDB = axios.create({
     baseURL: 'https://www.omdbapi.com/',
-    params: { apikey: process.env.VITE_OMDB_API_KEY }
+    params: { apikey: process.env.OMDB_API_KEY }
 })
 
 
