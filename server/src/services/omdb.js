@@ -9,7 +9,7 @@ const OMDB = axios.create({
 
 export const searchmovies = async ({ query, page= 1 }) => {
 
-    const data = await OMDB.get('/', {
+    const  data = await OMDB.get('/', {
         params: { s: query, page },
     });
 return data;
