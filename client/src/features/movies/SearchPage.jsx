@@ -20,11 +20,9 @@ export default function SearchPage() {
       {isFetching && <p className="p-4">Loading…</p>}
       {isError && <p className="p-4 text-red-600">Error loading results.</p>}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-4">
           {data?.Search?.map((m) => (
             <MovieCard key={m.imdbID} m={m} />
           ))}
-        </div>
 
       </div>
       {data?.total_pages > 1 && (
