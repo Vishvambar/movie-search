@@ -1,4 +1,4 @@
-import { getmovies } from "../../src/services/omdb.js";
+import { getmovies } from "../../services/omdb.js";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
