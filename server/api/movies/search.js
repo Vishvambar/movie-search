@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { searchmovies } from "../../services/omdb.js";
+import { searchmovies } from "../../src/services/omdb.js";
 
 export default async function handler(req, res) {
   if (req.method !== "GET") {
