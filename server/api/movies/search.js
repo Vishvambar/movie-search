@@ -18,8 +18,15 @@ export default async function handler(req, res) {
     });
 
     const { data } = await searchmovies({ query: q, page });
-    res.status(200).json(data);
+    
+    // Handle OMDB API errors
+    if (data.Error) {
+      return res.status(200).json(data); // Return the error from OMDB but with 200 status
+    }
+    
+    return res.status(200).json(data);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error("Search API error:", error);
+    return res.status(400).json({ error: error.message });
   }
 }
