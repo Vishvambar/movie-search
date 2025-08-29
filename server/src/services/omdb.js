@@ -1,8 +1,9 @@
 import axios from 'axios';
-import 'dotenv/config';
+import dotenv from 'dotenv';
+dotenv.config();
 const OMDB = axios.create({
-    baseURL: 'http://www.omdbapi.com/',
-    params: { apikey: process.env.OMDB_API_KEY }
+    baseURL: 'https://www.omdbapi.com/',
+    params: { apikey: process.env.VITE_OMDB_API_KEY }
 })
 
 
@@ -16,7 +17,7 @@ return data;
 
 export const getmovies = async (id)=>{
     const data = await OMDB.get('/',{
-        params:{ i: id, plot: "full"  },
+        params:{ i: id, plot: "full" },
     })
     return data ;
 

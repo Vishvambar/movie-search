@@ -1,7 +1,8 @@
 import {configureStore} from '@reduxjs/toolkit';
-import apislice from './apiSlice';
+import {apiSlice} from './apiSlice';
 
 export const store = configureStore({
-    reducer:{ [apislice.reducerPath]: apislice.reducer},
-    middleware :    (gDM)=> gDM().concat(apislice.middleware),
+    reducer:{ [apiSlice.reducerPath]: apiSlice.reducer},
+    middleware :    (gDM)=> gDM().concat(apiSlice.middleware),
 })
+export default store;
